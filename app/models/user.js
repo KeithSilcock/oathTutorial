@@ -1,14 +1,11 @@
 // app/models/user.js
 // load the things we need
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
+var mysql = require('mysql');
 var bcrypt   = require('bcrypt-nodejs');
 
 // define the schema for our user model
 var userSchema = mongoose.Schema({
-
-    //this weekend I finished the redux prototype
-    //I am currently working on node oauth
-    //no blockers
 
     local            : {
         email        : String,
