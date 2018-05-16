@@ -9,6 +9,7 @@ var port     = process.env.PORT || 8080;
 // var mongoose = require('mongoose');
 const credentials = require('./config/mysqlcredentials.js');
 const mysql = require('mysql');
+const dataBase = mysql.createConnection(credentials);
 
 var passport = require('passport');
 var flash    = require('connect-flash');
@@ -23,9 +24,8 @@ var session      = require('express-session');
 
 // configuration ===============================================================
 // mongoose.connect(configDB.url); // connect to our database
-const dataBase = mysql.createConnection(credentials);
 
-require('./config/passport')(passport); // pass passport for configuration
+require('./config/passport')(passport, app, dataBase, mysql); // pass passport for configuration
 
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
