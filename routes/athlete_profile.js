@@ -5,6 +5,7 @@ module.exports = function (webserver, dataBase, mysql) {
         if (req.query && req.query.athleteId) {
             athleteID = req.query.athleteId;
         }
+        athleteID='2';
         let query = "SELECT `ai`.`first_name`, `ai`.`last_name`, `ai`.`height`, " +
             "`ai`.`weight`, `ai`.`img_url`,`ai`.`age`, " +
             "`s`.`stat_name`, `s`.`stat_value` " +
@@ -26,7 +27,7 @@ module.exports = function (webserver, dataBase, mysql) {
         //     "ON ??.?? = ??.?? " +
         //     "WHERE ??.?? = ? ";
         // let ai = 'athlete_info';
-        // let s = 'stats';
+        // let s = 'stats';s
         // let inserts = [ai, 'first_name', ai, 'last_name', ai, 'height', ai, 'weight', ai, 'img_url', ai, 'age',
         // s, 'stat_name', s, 'stat_value', ai, 'athletes', ai, 'athlete_info_id', 'athletes', 'athlete_info_id',
         // s, 'athletes', 'athlete_id', s, 'athlete_id', ai, 'user_id', athleteID];
